@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :tutors
   resources :lecturers
   root 'home#index'
+  get 'home/help'
+  get 'home/about'
+  get 'home/contact'
 
   mount RailsAdmin::Engine => '/iuiuadmin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.

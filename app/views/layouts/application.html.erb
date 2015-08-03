@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MY LECTURE</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", home_about_path %></li>
+        <li><%= link_to "Contact", home_contact_path %></li>
+        <li><%= link_to "Help", home_help_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<% if tutor_signed_in? %>
+        	<li> <%= link_to "log_out", destroy_tutor_session_path, method: :delete %></li>
+       	<%else %>
+       		<li> <%= link_to "Sign_in", new_tutor_session_path %></li>
+       		<li> <%= link_to "Sign_up", new_tutor_registration_path %></li>
+       	<%end%>
+      </ul>
+    </div>
+  </div>
+</nav>
+
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
+
 
 
 <%= yield %>

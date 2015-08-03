@@ -1,0 +1,38 @@
+<<table>
+	<caption>table title and/or explanatory text</caption>
+	<thead>
+		<tr>
+			<th>five</th>
+			<th>one</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<%for counter in @valuable do%>
+		<tr>
+
+ <td><%= counter.id%></td>
+<td><%= counter.name %></td>
+ <td><%= counter.faculty%></td>
+ <td><%= counter.course%></td>
+  <td><%= counter.phone%></td>
+   <td><%= counter.course_unit%></td>
+
+   	</tr>
+
+
+
+
+<%end%>
+			<td>data</td>
+		
+	</tbody>
+</table>>
+
+
+
+
+
+
+
+
